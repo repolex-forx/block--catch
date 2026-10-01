@@ -1,0 +1,25 @@
+[2026-10-01T09:56:41Z] === ENRICH ITERATION 1 START | repo=block/catch sha=30d3d622 ===
+[2026-10-01T09:56:41Z] [iter=1] PHASE START: enrich repo=block/catch sha=30d3d622 runlog=/home/runner/work/forx/forx/storage/aggregate/lsp/logs/30d3d622-enrich-iter-001.log output=/home/runner/work/forx/forx/storage/aggregate/lsp/30d3d62242046568cd962ae7330e17b5fa24bb19.nq.gz
+[2026-10-01T09:56:41Z] [iter=1] Step 1: Loading AST into disk-backed store mem_mb=78 MB
+[2026-10-01T09:56:48Z] [iter=1] AST store loaded triples=221869 load_secs=7 mem_mb=378 MB
+[2026-10-01T09:56:48Z] [iter=1] Step 2: Finding LSP targets mem_mb=378 MB
+[2026-10-01T09:56:49Z] [iter=1] LSP targets found call_sites=1651 imports=69 extends=0 implements=0 secs=1
+[2026-10-01T09:56:49Z] [iter=1] Step 2.7: Building position index (one-shot, shared across resolvers) mem_mb=378 MB
+[2026-10-01T09:56:50Z] [iter=1] Position index built positions=12374 nodes_with_types=14999 secs=1 mem_mb=378 MB
+[2026-10-01T09:56:50Z] [iter=1] Step 3: Starting LSP resolution mem_mb=378 MB already_completed_types=[] already_completed_files=0
+[2026-10-01T09:56:50Z] [iter=1] Resolving target type target_type=call_site count=1651
+[2026-10-01T09:57:19Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=0.6 files_done=1 resolved=7 errors=31 current=Sources/Catch/Views/MainView.swift
+[2026-10-01T09:57:56Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=1.3 files_done=3 resolved=53 errors=262 current=Sources/CatchApp/CatchApp.swift
+[2026-10-01T09:58:28Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=1.8 files_done=7 resolved=150 errors=359 current=Tests/CatchTests/GooseAgentInvocationTests.swift
+[2026-10-01T09:59:00Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=2.3 files_done=19 resolved=180 errors=450 current=Tests/CatchTests/FloatingPanelTests.swift
+[2026-10-01T10:00:19Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=3.6 files_done=22 resolved=184 errors=467 current=Sources/Catch/Support/JSONObject.swift
+[2026-10-01T10:00:50Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=4.2 files_done=36 resolved=203 errors=494 current=script/build_and_run.sh
+[2026-10-01T10:00:53Z] [iter=1] Target type resolved target_type=call_site resolved=203 errors=514 secs=243 mem_mb=378 MB
+[2026-10-01T10:00:53Z] [iter=1] Resolving target type target_type=import_statement count=69
+[2026-10-01T10:01:21Z] [iter=1] HEARTBEAT target_type=import_statement elapsed_min=4.7 files_done=10 resolved=14 errors=0 current=Tests/CatchTests/SessionTitleResolverTests.swift
+[2026-10-01T10:01:52Z] [iter=1] HEARTBEAT target_type=import_statement elapsed_min=5.2 files_done=19 resolved=20 errors=0 current=Sources/Catch/Stores/SessionStore.swift
+[2026-10-01T10:02:22Z] [iter=1] HEARTBEAT target_type=import_statement elapsed_min=5.7 files_done=35 resolved=32 errors=0 current=Package.swift
+[2026-10-01T10:02:28Z] [iter=1] Target type resolved target_type=import_statement resolved=33 errors=0 secs=96 mem_mb=378 MB
+[2026-10-01T10:03:40Z] [iter=1] Step 5: Writing final enrichment file triples=9094
+[2026-10-01T10:03:40Z] [iter=1] Enrichment file written path=/home/runner/work/forx/forx/storage/aggregate/lsp/30d3d62242046568cd962ae7330e17b5fa24bb19.nq.gz size_kb=172
+[2026-10-01T10:03:40Z] [iter=1] PHASE END: enrich elapsed_s=419 elapsed_min=7.0 total_triples=9094
