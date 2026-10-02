@@ -1,0 +1,11 @@
+{
+  "org": "block",
+  "repo": "catch",
+  "versions": [
+    {
+      "commit": "30d3d62242046568cd962ae7330e17b5fa24bb19",
+      "tag": "main",
+      "parsed_at": "2026-10-02T10:11:17.510713+00:00"
+    }
+  ]
+}

@@ -1,1 +1,136 @@
-Initializing
+# Repolex Knowledge Graph of block/catch
+
+RDF knowledge graph data for [block/catch](https://github.com/block/catch), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download block/catch
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 30d3d62242046568cd962ae7330e17b5fa24bb19
+│   │       └── chunk-001.nq.gz
+│   ├── lsp
+│   │   └── 30d3d62242046568cd962ae7330e17b5fa24bb19.nq.gz
+│   └── repolex
+│       └── 30d3d62242046568cd962ae7330e17b5fa24bb19
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 00bb5fb35f56d6129137dcca753e74150d4b915c.nq.gz
+│   ├── 05052acb7480afcd5bbabb0dad6a4332dfddc287.nq.gz
+│   ├── 079974d1e7a9eb65367988fecd40bde47f3d7843.nq.gz
+│   ├── 0ba9db25329d0b336e39ca8cde8470c5b7bc45eb.nq.gz
+│   ├── 1be01575aa9d07494cda02f013a82693e07f5507.nq.gz
+│   ├── 1ce907a3ff60d497c07b41e17ac96686cce0d51d.nq.gz
+│   ├── 2179fd4a9a5913765809959a481be6e08be25e90.nq.gz
+│   ├── 25f0bc5ed80683a81f46e6bfd1cf8ea0b56c6807.nq.gz
+│   ├── 269316f5bc76bedf24e97028a6cdb0bbcb8e0549.nq.gz
+│   ├── 26f4a5749c327061fb07435c2c84076a903e81b1.nq.gz
+│   ├── 297be1677e5e1db238555553d55efe372b9d7849.nq.gz
+│   ├── 2c5cd8883f2403ad16a390722b2ea96d760c0eae.nq.gz
+│   ├── 336191f4a68ef29281973bb4eebc4c52b37699b7.nq.gz
+│   ├── 37e71b1c1ac67457395978de2bd0b0f658e57a67.nq.gz
+│   ├── 3cb00d813046a14d52e8089f1509e946dc8100b8.nq.gz
+│   ├── 3eb7b1d43d0f9197fef0ed28075d4d92f0ff44bd.nq.gz
+│   ├── 414ed6a0933f7022595831a3c72d2ab2a6ffd890.nq.gz
+│   ├── 550e8e61fd9df582773cc4a28a728ed4807af27b.nq.gz
+│   ├── 55c7375e337f08561b7f368c7e94fd2a6ee3a4b0.nq.gz
+│   ├── 5d9d723df1646300f00c8feae7ef4096b8421257.nq.gz
+│   ├── 60f38b0b2e225341ed45e8be5914d04d16cb30dc.nq.gz
+│   ├── 629732943241a526e2a65de2c805de2764afe3c7.nq.gz
+│   ├── 6bccf43368fd7c96d9c659562a5142b8b8cb98a1.nq.gz
+│   ├── 7876b9ea29b2f5680f5d71b4285bd2bfae12d22b.nq.gz
+│   ├── 7dcc4217c6adb888d5761dfb440b7b3ed352c966.nq.gz
+│   ├── 7f128b549b9bc279bd7232850fe64a840879ad6c.nq.gz
+│   ├── 862ee3c28647e7a58801a75236855c269c1448ae.nq.gz
+│   ├── 86bbebf6cebee74eba9c68c76b73102831414b29.nq.gz
+│   ├── 8b10e37e3369a7c48849a34823ef85fb458a140a.nq.gz
+│   ├── 90423b484b88885d520aa96a47751d9c897260ef.nq.gz
+│   ├── 9582fc588754f78d9875691a3bd5e674295436b3.nq.gz
+│   ├── 9d2c825183220974e23ceaf94666776bbd691ae6.nq.gz
+│   ├── b6f3e59c4899f29d1d8ba09eeab055497f2601c4.nq.gz
+│   ├── b9618cf3326ec22b54f0a0ac4c0fc08e686b1463.nq.gz
+│   ├── bbffaa93ecc3a01976fa22b3447773e0d173fac4.nq.gz
+│   ├── bf3d58943f6d9c89fe3b9730575a8cc4d1624f82.nq.gz
+│   ├── c0b43f33569637763fa76167b816cacfd0c27d91.nq.gz
+│   ├── c11873e934376a8d725c0989f92be2d14fee2037.nq.gz
+│   ├── cbbd69d59a080e07dc94d98e2be73c8c3102ea40.nq.gz
+│   ├── cbf745f38aaafadede880636cb01c86a25ef6ee4.nq.gz
+│   ├── d29504fdb9eae8624be99f5d5d574f49c1541af0.nq.gz
+│   ├── d4383dd1b75b2d0787af2e54e21bc08a943e5b2f.nq.gz
+│   ├── e1eafc1386940435c3df9d45ba09438627d86c5e.nq.gz
+│   ├── e40c234ed647903df963353e10f91aadb727f5c0.nq.gz
+│   ├── e58d0869c1e4e0c6f38b8a92d2b2f20ae7ecb952.nq.gz
+│   ├── e647557ee54492cf4f7f80ecce84799d280423de.nq.gz
+│   ├── ebb690f3b7f4f0dbe096e10b79ee6d459eaba4e2.nq.gz
+│   ├── ebe4e7beef0b6f2c1315181be0c5a0cb715053a2.nq.gz
+│   ├── f00436f263e9f6ef1e2c6965f92eaf56543f3931.nq.gz
+│   ├── f2992a1422218d1529a9539953ae01a61288f685.nq.gz
+│   ├── f3755390d201ebc90b97206e7e9a797531dc544a.nq.gz
+│   ├── f381fb8eaeebe82349725b235a9add7f93c19e47.nq.gz
+│   ├── f39bb25edd35019eca67a20cb942992bf2dba178.nq.gz
+│   ├── fe10f81a3cc3dfb310187430a5cc26e35b860437.nq.gz
+│   └── ff518a6fb6ef22a365cdbd76205131ff76781249.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 30d3d62242046568cd962ae7330e17b5fa24bb19.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+14 directories, 64 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[block/catch](https://github.com/block/catch)
+
+---
+*Parsed on 2026-10-02 by [repolex](https://repolex.ai)*
